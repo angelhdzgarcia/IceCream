@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iceapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: iceapi
+  template:
+    metadata:
+      labels:
+        app: iceapi
+    spec:
+      containers:
+      - name: iceapi
+        image: angelhdzg/apiahg:latest
+        ports:
+        - containerPort: 3000
